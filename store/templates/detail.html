@@ -1,0 +1,106 @@
+{%extends 'base.html'%}
+
+
+{%load static%}
+
+
+{%block main_block%}
+
+
+    <!-- detail start -->
+    <!-- <div style="height: 150px;"></div>
+    <div class="container-fluid banner " style="height: 620px; width: 1300px;">
+        <div class="container py-6">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-6">
+                    <form action="{%url 'addTo-basket' data.id%}" method="post">
+                        {%csrf_token%}
+                        <div class="py-4">
+                            <h1 class=" text-bg-primary">{{data.name}}</h1>
+                            <p class="mb-4 text-dark fw-bold">Description={{data.description}}</p>
+                            <p class="mb-4 text-dark fw-bold">Brand ={{data.brand_object}}</p>
+                            <p class="mb-4 text-dark fw-bold">Year={{data.year}}</p>
+                            <p class="mb-4 text-dark fw-bold">Cubic Capacity={{data.cubic_capacity}}</p>
+                            <p class="mb-4 text-dark fw-bold">Distance Travelled={{data.distance_travelled}}</p>
+                            <p class="mb-4 text-dark fw-bold">Ownership={{data.ownership}}</p>
+                            <p class="mb-4 text-dark fw-bold">Price={{data.price}}</p>
+                            
+                            
+    
+                            <button class="banner-btn btn-primary border-2 border-white rounded-pill text-dark py-3 px-5 " type="submit">ADD CART</button>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <div class="position-relative">
+                        <img src="{{data.image.url}}" class="img-fluid rounded" alt="" style="height: 450px; width: 400px;">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  -->
+
+    <!-- detail end -->
+
+
+
+
+<div class="bg-dark shadow-5" style="height: 80px;"> <span>|</span></div>
+
+<div class="shadow-5 bg-black">
+    
+<section class="ftco-section ftco-about border-5 ">
+    <div class="container ">
+      <div class="row no-gutters">
+        <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" >
+          <img src="{{data.image.url}}" alt="" class="w-50">
+        </div>
+        <div class="col-md-6 wrap-about ftco-animate">
+          <div class="heading-section heading-section-white pl-md-5">
+            <h1 class="mb-4 fst-italic text-danger">{{data.name}}</h1>
+           
+      <div class="d-flex justify-content-evenly">
+          <div >
+              <div><button class="btn btn-outline-primary text-danger mb-4">Brand ={{data.brand_object}}</button></div>
+               
+              <div><button class="btn btn-outline-primary text-danger mb-4">year: {{data.year}}</button></div>
+            </div>
+  
+  
+  
+          <div >
+  
+              <div> <button class="btn btn-outline-primary text-danger mb-4">Cubic Capacity={{data.cubic_capacity}}</button></div>
+              <div><button class="btn btn-outline-primary text-danger">Distance: {{data.distance_travelled}}km</button></div>
+          </div>
+      </div>
+           
+  
+            <div>
+              <h4 class="text-white">
+                Decsription
+              </h4>
+              <p class="text-white">
+                {{data.description}}
+              </p>
+            </div>
+  
+            <form action="{%url 'addTo-basket' data.id%}" method="post">
+              {%csrf_token%}
+              
+              <button type="submit" class="btn-danger  px-1" style="height: 30px;">Add To Wishlist</button>
+            </form>
+  
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+
+{%endblock%}

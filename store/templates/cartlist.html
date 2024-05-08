@@ -1,0 +1,64 @@
+{%extends 'base.html'%}
+
+
+{%load static%}
+
+
+{%block main_block%}
+
+
+
+<!-- cart start -->
+ 
+
+<div style="height: 100px;"></div>
+     
+<div class="container-fluid shadow-5 bg-black " style="height: 3200px; width: 1600px;">
+    <div class="container py-6">
+        <a class="banner-btn btn-danger border-2 border-white rounded-pill text-dark py-3 px-5 " type="submit" >Favourites Items</a>
+
+       
+       
+        {%for p in data%}
+        <div class="row g-4 align-items-center shadow-5 border-dark" style="height: 300px; width: 1320px;">
+            <div class="col-lg-6 ">
+            <div>
+                
+                <div class="py-4">
+                    <h1 class="display-5 text-white">{{p.Bikes_object.name}}</h1>
+                    <h3 class="display-7 text-white">${{p.Bikes_object.price}}</h3>
+                   
+            
+                    <a class="btn btn-outline-primary btn-outline-danger" type="submit" href="{%url 'item-remove' p.id%}">Remove</a>
+                    <a class="btn btn-outline-primary btn-outline-danger ms-5" type="submit" href="{%url 'check-out' %}">check-out</a>
+                   
+
+                    <!-- <button class="banner-btn btn-danger border-2 border-white rounded-pill text-dark py-3 px-5 " type="submit">Check Out</button> -->
+
+                </div>
+            </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="position-relative">
+                    <img src="{{p.Bikes_object.image.url}}" class="img-fluid rounded-5" alt="" style="height: 210px; width: 200px;">
+                    
+                </div>
+            </div>
+        </div> 
+        {%endfor%}
+        <!-- <a class="banner-btn btn-danger  border-2 border-white rounded-pill d-grid gap-2 col-6 mx-auto" href="{%url 'check-out' %}"type="submit">
+            <div class="d-flex justify-content-center text-white fw-bold">
+                <h1>checkout</h1>
+            </div>
+        </a> -->
+
+    </div>
+</div> 
+
+</div>
+<!-- cart end -->
+
+
+{%endblock%}
+
+
